@@ -137,10 +137,10 @@ class contenedor{
 
 async function ejecutar(){
     const contenedor1= new contenedor('./productos.txt');
-    await contenedor1.save({nombre:'limon',thumbnail:'./dir',precio:'18'})
-    await contenedor1.save({nombre:'melon',thumbnail:'./dir',precio:'18'})
-    await contenedor1.save({nombre:'sandia',thumbnail:'./dir',precio:'18'})
-    await contenedor1.save({nombre:'manzana',thumbnail:'./dir',precio:'18'})
+    await contenedor1.save({nombre:'limon',thumbnail:'.../images/lim.jpg',precio:'18'})
+    await contenedor1.save({nombre:'melon',thumbnail:'../images/mel.jpg',precio:'32'})
+    await contenedor1.save({nombre:'sandia',thumbnail:'../images/sand.jpg',precio:'15'})
+    await contenedor1.save({nombre:'manzana',thumbnail:'../images/manza.jpg',precio:'65'})
 
     await contenedor1.getById(2)
 
