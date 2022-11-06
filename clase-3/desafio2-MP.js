@@ -7,12 +7,12 @@ class contenedor{
 
     async save(producto){
         let data
+        let id=0
+        let dataObj=[]
         try{
             data = await fs.readFile(this.ruta,'utf-8')
             .then(data => {
                // console.log(data)
-                let id=0
-                let dataObj=[]
                 
                 if(data.length == 0){
                     //console.log('if',data)
@@ -32,6 +32,9 @@ class contenedor{
 
             }).catch( err => {
                 console.log('\nError en la lectura \n ', err)
+                fs.writeFile(this.ruta,'')
+                console.log('se creo el ardchivo')
+               
             }) 
 
         }catch(err){
@@ -130,15 +133,26 @@ class contenedor{
 
 }
 
-const contenedor1= new contenedor('./productos.txt')
 
 
-contenedor1.save({nombre:'limon',thumbnail:'./dir',precio:'18'})
-contenedor1.save({nombre:'melon',thumbnail:'./dir',precio:'18'})
-contenedor1.save({nombre:'sandia',thumbnail:'./dir',precio:'18'})
-contenedor1.save({nombre:'manzana',thumbnail:'./dir',precio:'18'})
-contenedor1.getById()
-contenedor1.getAll()
-contenedor1.deleteById(1)
-contenedor1.deleteAll()
+async function ejecutar(){
+    const contenedor1= new contenedor('./productos.txt');
+    await contenedor1.save({nombre:'limon',thumbnail:'./dir',precio:'18'})
+    await contenedor1.save({nombre:'melon',thumbnail:'./dir',precio:'18'})
+    await contenedor1.save({nombre:'sandia',thumbnail:'./dir',precio:'18'})
+    await contenedor1.save({nombre:'manzana',thumbnail:'./dir',precio:'18'})
+
+    await contenedor1.getById(2)
+
+    await contenedor1.getAll()
+    await contenedor1.deleteById(3)
+   // await contenedor1.deleteAll()
+}
+
+ejecutar()
+
+//
+//contenedor1.getAll()
+//contenedor1.deleteById(1)
+//contenedor1.deleteAll()
 
