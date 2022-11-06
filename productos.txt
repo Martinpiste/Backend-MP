@@ -10,5 +10,23 @@
     "nombre": "sandia",
     "thumbnail": "./dir",
     "precio": "18"
+  },
+  {
+    "id": 4,
+    "nombre": "melon",
+    "thumbnail": "./dir",
+    "precio": "18"
+  },
+  {
+    "id": 5,
+    "nombre": "sandia",
+    "thumbnail": "./dir",
+    "precio": "18"
+  },
+  {
+    "id": 6,
+    "nombre": "manzana",
+    "thumbnail": "./dir",
+    "precio": "18"
   }
 ]

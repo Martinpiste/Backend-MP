@@ -151,8 +151,3 @@ async function ejecutar(){
 
 ejecutar()
 
-//
-//contenedor1.getAll()
-//contenedor1.deleteById(1)
-//contenedor1.deleteAll()
-
